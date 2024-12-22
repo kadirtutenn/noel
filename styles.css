@@ -1,106 +1,136 @@
 body {
-    margin: 0;
-    overflow: hidden;
-    background-color: #0c2d48;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  overflow: hidden;
+  background-color: #0c2d48;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+#santa-container {
+  position: absolute;
+  top: 50%;
+  left: -300px; /* Ekranın sol dışı */
+  transform: translateY(-50%);
+  animation: moveSantaIn 3s ease-out forwards;
+}
+
+#santa-animation {
+  width: 300px;
+  height: 300px;
+}
+
+#speech-bubble {
+  display: none;
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  color: black;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 1rem;
+  text-align: center;
+  width: 200px;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+#gift-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  display: none;
+  animation: dropGift 2s ease-in-out forwards;
+  cursor: pointer;
+}
+
+/* Ayna Görseli */
+#mirror-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+#mirror-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+#christmas-message {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7), 0 0 20px #ff0000, 0 0 30px #00ff00;
+  opacity: 0;
+  animation: fadeIn 3s ease-in-out forwards, glow 1.5s infinite alternate;
+  z-index: 9999;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
-  
-  #santa-container {
-    position: absolute;
-    top: 50%;
-    left: -300px; /* Ekranın sol dışı */
-    transform: translateY(-50%);
-    animation: moveSantaIn 3s ease-out forwards;
+  100% {
+    opacity: 1;
   }
-  
-  #santa-animation {
-    width: 300px;
-    height: 300px;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7), 0 0 10px #ff0000, 0 0 20px #00ff00;
   }
-  
-  #speech-bubble {
-    display: none;
-    position: absolute;
-    top: -50px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: white;
-    color: black;
-    padding: 15px;
-    border-radius: 10px;
-    font-size: 1rem;
-    text-align: center;
-    width: 200px;
-    animation: fadeIn 1s ease-in-out forwards;
+  100% {
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7), 0 0 20px #ff0000, 0 0 40px #00ff00;
   }
-  
-  #gift-box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 50px;
-    display: none;
-    animation: dropGift 2s ease-in-out forwards;
-    cursor: pointer;
+}
+
+
+/* Animasyonlar */
+@keyframes moveSantaIn {
+  to {
+    left: 50%; /* Ekranın ortası */
+    transform: translateX(-50%) translateY(-50%);
   }
-  
-  #camera-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    border-radius: 10px;
-    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  #camera-stream {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background: black;
-    display: block;
+  to {
+    opacity: 1;
   }
-  
-  
-  /* Animasyonlar */
-  @keyframes moveSantaIn {
-    to {
-      left: 50%; /* Ekranın ortası */
-      transform: translateX(-50%) translateY(-50%);
-    }
+}
+
+@keyframes dropGift {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.5);
   }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
   }
-  
-  @keyframes dropGift {
-    from {
-      opacity: 0;
-      transform: translateY(-50%) scale(0.5);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(-50%) scale(1);
-    }
+}
+
+@keyframes moveSantaOutRight {
+  to {
+    left: -50%; /* Sağ dış */
   }
-  
-  @keyframes moveSantaOutRight {
-    to {
-      left: -50%; /* Sağ dış */
-    }
-  }
-  
+}

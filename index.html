@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Noel Baba Animasyonu</title>
   <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -19,14 +20,17 @@
     ></dotlottie-player>
     <div id="speech-bubble"></div>
   </div>
+  <div id="christmas-message">Happy Christmas</div>
+  <div id="snow-container"></div>
 
   <!-- Hediye Kutusu -->
   <div id="gift-box" style="display: none;">🎁</div>
 
-  <!-- Kamera Akışı -->
-  <div id="camera-container" style="display: none;">
-    <video id="camera-stream" autoplay playsinline></video>
-    <p>It's you!</p>
+  <!-- Görsel ve Mesaj -->
+  <div id="mirror-container" style="display: none;">
+    <a href="https://youtu.be/L3HQMbQAWRc?si=jVIM4fSZddJwgDjh" ><img id="mirror-image" src="assets/alex.png" alt="Alex"> </a>
+    <p>Seninle olduğum için çok mutluyum. Teşekkürler Hav!</p>
+    <p>Nice birlikte senelereeeh</p>
   </div>
 
   <script src="script.js"></script>
