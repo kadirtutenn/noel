@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #0c2d48;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  #santa-container {
+    position: absolute;
+    top: 50%;
+    left: -300px; /* Ekranın sol dışı */
+    transform: translateY(-50%);
+    animation: moveSantaIn 3s ease-out forwards;
+  }
+  
+  #santa-animation {
+    width: 300px;
+    height: 300px;
+  }
+  
+  #speech-bubble {
+    display: none;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    color: black;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1rem;
+    text-align: center;
+    width: 200px;
+    animation: fadeIn 1s ease-in-out forwards;
+  }
+  
+  #gift-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    display: none;
+    animation: dropGift 2s ease-in-out forwards;
+    cursor: pointer;
+  }
+  
+  #camera-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    animation: fadeIn 1s ease-in-out forwards;
+  }
+  
+  #camera-stream {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: black;
+    display: block;
+  }
+  
+  
+  /* Animasyonlar */
+  @keyframes moveSantaIn {
+    to {
+      left: 50%; /* Ekranın ortası */
+      transform: translateX(-50%) translateY(-50%);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes dropGift {
+    from {
+      opacity: 0;
+      transform: translateY(-50%) scale(0.5);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(-50%) scale(1);
+    }
+  }
+  
+  @keyframes moveSantaOutRight {
+    to {
+      left: -50%; /* Sağ dış */
+    }
+  }
+  

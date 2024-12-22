@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noel Baba Animasyonu</title>
+  <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="santa-container">
+    <dotlottie-player
+      id="santa-animation"
+      src="https://lottie.host/afc8e30d-4dbb-4422-8f84-2d595df350d8/dTO5J6LT4R.lottie"
+      background="transparent"
+      speed="0.5"
+      style="width: 300px; height: 300px"
+      autoplay
+    ></dotlottie-player>
+    <div id="speech-bubble"></div>
+  </div>
+
+  <!-- Hediye Kutusu -->
+  <div id="gift-box" style="display: none;">🎁</div>
+
+  <!-- Kamera Akışı -->
+  <div id="camera-container" style="display: none;">
+    <video id="camera-stream" autoplay playsinline></video>
+    <p>It's you!</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
